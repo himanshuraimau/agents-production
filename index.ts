@@ -1,6 +1,6 @@
 import 'dotenv/config'
 import {runLLM} from './src/llm'
-import {getMessages} from './src/memory'
+import {addMessages,getMessages} from './src/memory'
 
 const userMessage = process.argv[2]
 
@@ -16,5 +16,6 @@ const response = await runLLM({
 		{role: 'user', content: userMessage}
 	]
 })
+await addMessages([{role: 'assistant', content: response}])
 
 console.log(response)

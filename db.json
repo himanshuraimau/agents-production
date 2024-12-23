@@ -1,0 +1,19 @@
+{
+  "messages": [
+    {
+      "role": "assistant",
+      "content": {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Nice to meet you, Himanshu! How can I assist you today?",
+          "refusal": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      },
+      "id": "5d7dd905-0331-4d9a-ac49-85e2d7ff64a1",
+      "createdAt": "2024-12-23T18:37:20.284Z"
+    }
+  ]
+}

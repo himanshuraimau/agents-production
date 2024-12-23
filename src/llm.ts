@@ -1,4 +1,4 @@
-  import type { AIMessage } from '../types'
+import type { AIMessage } from '../types'
 import { openai } from './ai'
 
 
@@ -17,5 +17,5 @@ export const runLLM = async ({
     temperature
   })
 
-  return response.choices[0].message
+  return response.choices[0]
 }
