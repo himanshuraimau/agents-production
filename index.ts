@@ -1,6 +1,5 @@
 import 'dotenv/config'
-import { runLLM } from './src/llm'
-import { addMessages, getMessages } from './src/memory'
+import { runAgent } from './src/agents'
 
 const userMessage = process.argv[2]
 
@@ -9,13 +8,6 @@ if (!userMessage) {
   process.exit(1)
 }
 
-const messages = await getMessages()
-const response = await runLLM({
-  messages: [
-    ...messages,
-    { role: 'user', content: userMessage }
-  ]
-})
-await addMessages([{ role: 'assistant', content: response.message.content }])
+const response = runAgent({userMessage,tools:[]})
 
-console.log(response.message.content)
+console.log(response)

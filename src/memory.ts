@@ -32,14 +32,26 @@ export const getDb = async () => {
 
 export const addMessages = async (messages: AIMessage[]) => {
   const db = await getDb()
-  db.data.messages.push(...messages.map(message => ({
-    ...addMetadata(message),
-    content: String(message.content)
-  })))
+  db.data.messages.push(...messages.map(addMetadata))
   await db.write()
 }
 
 export const getMessages = async () => {
   const db = await getDb()
   return db.data.messages.map(removeMetadata)
+}
+
+export const saveToolResponse = async (
+  toolCallId: string,
+  toolResponse: string
+) => {
+  return await addMessages([
+    { role: 'tool', content: toolResponse, tool_call_id: toolCallId },
+  ])
+}
+
+export const clearMessages = async (keepLast?: number) => {
+  const db = await getDb()
+  db.data.messages = db.data.messages.slice(-(keepLast ?? 0))
+  await db.write()
 }
