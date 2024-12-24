@@ -6,14 +6,20 @@
         "index": 0,
         "message": {
           "role": "assistant",
-          "content": "Nice to meet you, Himanshu! How can I assist you today?",
+          "content": "I'm sorry, but I don't have access to personal information about users unless you share it with me. What would you like me to call you?",
           "refusal": null
         },
         "logprobs": null,
         "finish_reason": "stop"
       },
-      "id": "5d7dd905-0331-4d9a-ac49-85e2d7ff64a1",
-      "createdAt": "2024-12-23T18:37:20.284Z"
+      "id": "b18014e0-dc23-4dc1-9656-240024dd6924",
+      "createdAt": "2024-12-24T16:58:28.834Z"
+    },
+    {
+      "role": "assistant",
+      "content": "I don't know your name unless you tell me. What would you like me to call you?",
+      "id": "0ee54957-2c67-43de-83a4-c146994bd898",
+      "createdAt": "2024-12-24T16:59:31.807Z"
     }
   ]
 }

@@ -17,7 +17,7 @@ export interface Run {
   input: string
   output: {
     role: string
-    content: string | null
+    content: string
     tool_calls?: any[]
     refusal: null
   }
